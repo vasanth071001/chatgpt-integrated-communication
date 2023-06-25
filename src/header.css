@@ -1,0 +1,13 @@
+
+    @font-face {
+        font-family: static;
+        src: url(./font/static/DancingScript-Medium.ttf);
+    }
+    h2{
+        font-family: static;
+        color: white;
+        background-color: rgb(94, 89, 89);
+         margin-top: 0px;
+        text-align: center;
+        font-size: 30px;
+    }
