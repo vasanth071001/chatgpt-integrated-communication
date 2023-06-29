@@ -3,7 +3,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import Chatgptapi from './Chatgptapi';
 import './voice.css';
 
-const VoiceRecognitionComponent = () => {
+const VoiceRecognitionComponent = ({toggleVideoPlay}) => {
   const { transcript, listening, startListening, stopListening } = useSpeechRecognition();
   const [isRecordingStopped, setRecordingStopped] = useState(false);
   const [isChatVisible, setChatVisible] = useState(false);
@@ -55,7 +55,7 @@ const VoiceRecognitionComponent = () => {
       handleSpeechRecognition(transcript);
     }
   }, [transcript, isRecordingStopped, handleSpeechRecognition]);
-
+ 
   return (
     <div>
       <button onClick={startRecognition} disabled={listening || isRecordingStopped} className='startrecord'>
@@ -66,7 +66,9 @@ const VoiceRecognitionComponent = () => {
       </button>
       <p>Transcript: {transcript}</p>
       <p>Status: {listening ? 'Listening...' : 'Not listening'}</p>
-      {isChatVisible && <Chatgptapi transcript={transcript} />}
+      {isChatVisible && <Chatgptapi transcript={transcript} 
+      toggleVideoPlay={toggleVideoPlay}
+      />}
     </div>
   );
 };

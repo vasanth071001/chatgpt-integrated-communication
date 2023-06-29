@@ -5,19 +5,16 @@
     height: 100vh;
   }
   
-  .content-img {
-    width:500px;
-    height:400px;
-    background-size: cover;
-    margin-bottom: 120px;
-    margin-left: 70px;
-  }
+
   button{
     position: relative;
     top: 160px;
     right: 160px;
-    
-   /* margin-left: -45px;*/
+  
+  }
+  .content-video{
+    width:500px;
+    height:500px;
   }
   
  
